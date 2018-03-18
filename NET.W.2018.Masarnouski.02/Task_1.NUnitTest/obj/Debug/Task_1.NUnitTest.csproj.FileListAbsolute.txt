@@ -1,0 +1,15 @@
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\Task_1.NUnitTest.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\Task_1.NUnitTest.pdb
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\NET.W.2018.Masarnouski.02.exe
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\nunit.framework.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\NET.W.2018.Masarnouski.02.pdb
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\NET.W.2018.Masarnouski.02.exe.config
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\nunit.framework.pdb
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\nunit.framework.xml
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\obj\Debug\Task_1.NUnitTest.csprojResolveAssemblyReference.cache
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\obj\Debug\Task_1.NUnitTest.csproj.CoreCompileInputs.cache
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\obj\Debug\Task_1.NUnitTest.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\obj\Debug\Task_1.NUnitTest.pdb
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\Task_1.NUnitTest.dll.config
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\Combinatorics.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Task_1.NUnitTest\bin\Debug\Combinatorics.xml

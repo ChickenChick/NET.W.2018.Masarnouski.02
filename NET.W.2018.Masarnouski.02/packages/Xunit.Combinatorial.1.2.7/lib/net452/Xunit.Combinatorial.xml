@@ -1,0 +1,517 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Xunit.Combinatorial</name>
+    </assembly>
+    <members>
+        <member name="T:Xunit.CombinatorialDataAttribute">
+            <summary>
+            Provides a test method decorated with a <see cref="T:Xunit.TheoryAttribute"/>
+            with arguments to run every possible combination of values for the
+            parameters taken by the test method.
+            </summary>
+        </member>
+        <member name="M:Xunit.CombinatorialDataAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.CombinatorialDataAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:Xunit.CombinatorialDataAttribute.GetData(System.Reflection.MethodInfo)">
+            <inheritdoc />
+        </member>
+        <member name="M:Xunit.CombinatorialDataAttribute.FillCombinations(System.Reflection.ParameterInfo[],System.Collections.Generic.List{System.Object}[],System.Object[],System.Int32)">
+            <summary>
+            Produces a sequence of argument arrays that capture every possible
+            combination of values.
+            </summary>
+            <param name="parameters">The parameters taken by the test method.</param>
+            <param name="candidateValues">An array of each argument's list of possible values.</param>
+            <param name="currentValues">An array that is being recursively initialized with a set of arguments to pass to the test method.</param>
+            <param name="index">The index into <paramref name="currentValues"/> that this particular invocation should rotate through <paramref name="candidateValues"/> for.</param>
+            <returns>A sequence of all combinations of arguments from <paramref name="candidateValues"/>, starting at <paramref name="index"/>.</returns>
+        </member>
+        <member name="T:Xunit.CombinatorialValuesAttribute">
+            <summary>
+            Specifies which values for this parameter should be used for running the test method.
+            </summary>
+        </member>
+        <member name="M:Xunit.CombinatorialValuesAttribute.#ctor(System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.CombinatorialValuesAttribute"/> class.
+            </summary>
+            <param name="values">The values to pass to this parameter.</param>
+        </member>
+        <member name="P:Xunit.CombinatorialValuesAttribute.Values">
+            <summary>
+            Gets the values that should be passed to this parameter on the test method.
+            </summary>
+            <value>An array of values.</value>
+        </member>
+        <member name="T:Xunit.PairwiseDataAttribute">
+            <summary>
+            Provides a test method decorated with a <see cref="T:Xunit.TheoryAttribute"/>
+            with arguments to run various combination of values for the
+            parameters taken by the test method using a pairwise strategy.
+            </summary>
+        </member>
+        <member name="M:Xunit.PairwiseDataAttribute.GetData(System.Reflection.MethodInfo)">
+            <inheritdoc />
+        </member>
+        <member name="T:Xunit.PairwiseStrategy">
+            <summary>
+            PairwiseStrategy creates test cases by combining the parameter
+            data so that all possible pairs of data items are used.
+            </summary>
+            <remarks>
+            <para>
+            The number of test cases that cover all possible pairs of test function
+            parameters values is significantly less than the number of test cases
+            that cover all possible combination of test function parameters values.
+            And because different studies show that most of software failures are
+            caused by combination of no more than two parameters, pairwise testing
+            can be an effective ways to test the system when it's impossible to test
+            all combinations of parameters.
+            </para>
+            <para>
+            The PairwiseStrategy code is based on "jenny" tool by Bob Jenkins:
+            http://burtleburtle.net/bob/math/jenny.html
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Xunit.PairwiseStrategy.GetTestCases(System.Int32[])">
+            <summary>
+            Creates a set of test cases for specified dimensions.
+            </summary>
+            <param name="dimensions">
+            An array which contains information about dimensions. Each element of
+            this array represents a number of features in the specific dimension.
+            </param>
+            <returns>
+            A set of test cases.
+            </returns>
+        </member>
+        <member name="T:Xunit.PairwiseStrategy.FleaRand">
+            <summary>
+            FleaRand is a pseudo-random number generator developed by Bob Jenkins:
+            http://burtleburtle.net/bob/rand/talksmall.html#flea
+            </summary>
+        </member>
+        <member name="M:Xunit.PairwiseStrategy.FleaRand.#ctor(System.UInt32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.PairwiseStrategy.FleaRand"/> class.
+            </summary>
+            <param name="seed">The seed.</param>
+        </member>
+        <member name="T:Xunit.PairwiseStrategy.FeatureInfo">
+            <summary>
+            FeatureInfo represents coverage of a single value of test function
+            parameter, represented as a pair of indices, Dimension and Feature. In
+            terms of unit testing, Dimension is the index of the test parameter and
+            Feature is the index of the supplied value in that parameter's list of
+            sources.
+            </summary>
+        </member>
+        <member name="M:Xunit.PairwiseStrategy.FeatureInfo.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.PairwiseStrategy.FeatureInfo"/> class.
+            </summary>
+            <param name="dimension">Index of a dimension.</param>
+            <param name="feature">Index of a feature.</param>
+        </member>
+        <member name="T:Xunit.PairwiseStrategy.FeatureTuple">
+            <summary>
+            A FeatureTuple represents a combination of features, one per test
+            parameter, which should be covered by a test case. In the
+            PairwiseStrategy, we are only trying to cover pairs of features, so the
+            tuples actually may contain only single feature or pair of features, but
+            the algorithm itself works with triplets, quadruples and so on.
+            </summary>
+        </member>
+        <member name="M:Xunit.PairwiseStrategy.FeatureTuple.#ctor(Xunit.PairwiseStrategy.FeatureInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.PairwiseStrategy.FeatureTuple"/> class
+            for a single feature.
+            </summary>
+            <param name="feature1">Single feature.</param>
+        </member>
+        <member name="M:Xunit.PairwiseStrategy.FeatureTuple.#ctor(Xunit.PairwiseStrategy.FeatureInfo,Xunit.PairwiseStrategy.FeatureInfo)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.PairwiseStrategy.FeatureTuple"/> class
+            for a pair of features.
+            </summary>
+            <param name="feature1">First feature.</param>
+            <param name="feature2">Second feature.</param>
+        </member>
+        <member name="T:Xunit.PairwiseStrategy.TestCaseInfo">
+            <summary>
+            TestCase represents a single test case covering a list of features.
+            </summary>
+        </member>
+        <member name="M:Xunit.PairwiseStrategy.TestCaseInfo.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Xunit.PairwiseStrategy.TestCaseInfo"/> class.
+            </summary>
+            <param name="length">A number of features in the test case.</param>
+        </member>
+        <member name="T:Xunit.PairwiseStrategy.PairwiseTestCaseGenerator">
+            <summary>
+            PairwiseTestCaseGenerator class implements an algorithm which generates
+            a set of test cases which covers all pairs of possible values of test
+            function.
+            </summary>
+            <remarks>
+            <para>
+            The algorithm starts with creating a set of all feature tuples which we
+            will try to cover (see <see
+            cref="M:Xunit.PairwiseStrategy.PairwiseTestCaseGenerator.CreateAllTuples" /> method). This set
+            includes every single feature and all possible pairs of features. We
+            store feature tuples in the 3-D collection (where axes are "dimension",
+            "feature", and "all combinations which includes this feature"), and for
+            every two feature (e.g. "A" and "B") we generate both ("A", "B") and
+            ("B", "A") pairs. This data structure extremely reduces the amount of
+            time needed to calculate coverage for a single test case (this
+            calculation is the most time-consuming part of the algorithm).
+            </para>
+            <para>
+            Then the algorithm picks one tuple from the uncovered tuple, creates a
+            test case that covers this tuple, and then removes this tuple and all
+            other tuples covered by this test case from the collection of uncovered
+            tuples.
+            </para>
+            <para>
+            Picking a tuple to cover
+            </para>
+            <para>
+            There are no any special rules defined for picking tuples to cover. We
+            just pick them one by one, in the order they were generated.
+            </para>
+            <para>
+            Test generation
+            </para>
+            <para>
+            Test generation starts from creating a completely random test case which
+            covers, nevertheless, previously selected tuple. Then the algorithm
+            tries to maximize number of tuples which this test covers.
+            </para>
+            <para>
+            Test generation and maximization process repeats seven times for every
+            selected tuple and then the algorithm picks the best test case ("seven"
+            is a magic number which provides good results in acceptable time).
+            </para>
+            <para>Maximizing test coverage</para>
+            <para>
+            To maximize tests coverage, the algorithm walks thru the list of mutable
+            dimensions (mutable dimension is a dimension that are not included in
+            the previously selected tuple). Then for every dimension, the algorithm
+            walks thru the list of features and checks if this feature provides
+            better coverage than randomly selected feature, and if yes keeps this
+            feature.
+            </para>
+            <para>
+            This process repeats while it shows progress. If the last iteration
+            doesn't improve coverage, the process ends.
+            </para>
+            <para>
+            In addition, for better results, before start every iteration, the
+            algorithm "scrambles" dimensions - so for every iteration dimension
+            probes in a different order.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Xunit.PairwiseStrategy.PairwiseTestCaseGenerator.GetTestCases(System.Int32[])">
+            <summary>
+            Creates a set of test cases for specified dimensions.
+            </summary>
+            <param name="dimensions">
+            An array which contains information about dimensions. Each element of
+            this array represents a number of features in the specific dimension.
+            </param>
+            <returns>
+            A set of test cases.
+            </returns>
+        </member>
+        <member name="T:Xunit.PrivateErrorHelpers">
+            <summary>
+            Common utility methods used by the various error detection and reporting classes.
+            </summary>
+        </member>
+        <member name="M:Xunit.PrivateErrorHelpers.TrimGenericWrapper(System.Type,System.Type)">
+            <summary>
+            Trims away a given surrounding type, returning just the generic type argument,
+            if the given type is in fact a generic type with just one type argument and
+            the generic type matches a given wrapper type.  Otherwise, it returns the original type.
+            </summary>
+            <param name="type">The type to trim, or return unmodified.</param>
+            <param name="wrapper">The SomeType&lt;&gt; generic type definition to trim away from <paramref name="type"/> if it is present.</param>
+            <returns><paramref name="type"/>, if it is not a generic type instance of <paramref name="wrapper"/>; otherwise the type argument.</returns>
+        </member>
+        <member name="M:Xunit.PrivateErrorHelpers.Format(System.String,System.Object[])">
+            <summary>
+            Helper method that formats string arguments.
+            </summary>
+            <param name="format">The unformatted string.</param>
+            <param name="arguments">The formatting arguments.</param>
+            <returns>The formatted string.</returns>
+        </member>
+        <member name="T:Xunit.Requires">
+            <summary>
+            Common runtime checks that throw ArgumentExceptions upon failure.
+            </summary>
+        </member>
+        <member name="M:Xunit.Requires.NotNull``1(``0,System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is null.
+            </summary>
+            <typeparam name="T">The type of the parameter.</typeparam>
+            <param name="value">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <returns>The value of the parameter.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="value"/> is <c>null</c></exception>
+        </member>
+        <member name="M:Xunit.Requires.NotNull(System.IntPtr,System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is IntPtr.Zero.
+            </summary>
+            <param name="value">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <returns>The value of the parameter.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="value"/> is IntPtr.Zero</exception>
+        </member>
+        <member name="M:Xunit.Requires.NotNull(System.Threading.Tasks.Task,System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is null.
+            </summary>
+            <param name="value">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="value"/> is <c>null</c></exception>
+            <remarks>
+            This method allows async methods to use Requires.NotNull without having to assign the result
+            to local variables to avoid C# warnings.
+            </remarks>
+        </member>
+        <member name="M:Xunit.Requires.NotNull``1(System.Threading.Tasks.Task{``0},System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is null.
+            </summary>
+            <typeparam name="T">The type of the return value of the task.</typeparam>
+            <param name="value">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="value"/> is <c>null</c></exception>
+            <remarks>
+            This method allows async methods to use Requires.NotNull without having to assign the result
+            to local variables to avoid C# warnings.
+            </remarks>
+        </member>
+        <member name="M:Xunit.Requires.NotNullAllowStructs``1(``0,System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is null.
+            </summary>
+            <typeparam name="T">The type of the parameter.</typeparam>
+            <param name="value">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <returns>The value of the parameter.</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="value"/> is <c>null</c></exception>
+            <remarks>
+            This method exists for callers who themselves only know the type as a generic parameter which
+            may or may not be a class, but certainly cannot be null.
+            </remarks>
+        </member>
+        <member name="M:Xunit.Requires.NotNullOrEmpty(System.String,System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is null or empty.
+            </summary>
+            <param name="value">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="value"/> is <c>null</c> or empty.</exception>
+        </member>
+        <member name="M:Xunit.Requires.NotNullOrWhiteSpace(System.String,System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is null, empty, or whitespace.
+            </summary>
+            <param name="value">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="value"/> is <c>null</c> or empty.</exception>
+        </member>
+        <member name="M:Xunit.Requires.NotNullOrEmpty(System.Collections.IEnumerable,System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is null,
+            has no elements or has an element with a null value.
+            </summary>
+            <param name="values">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <exception cref="T:System.ArgumentException">Thrown if the tested condition is false.</exception>
+        </member>
+        <member name="M:Xunit.Requires.NotNullEmptyOrNullElements``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is null,
+            has no elements or has an element with a null value.
+            </summary>
+            <typeparam name="T">The type of the elements in the sequence.</typeparam>
+            <param name="values">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <exception cref="T:System.ArgumentException">Thrown if the tested condition is false.</exception>
+        </member>
+        <member name="M:Xunit.Requires.NullOrNotNullElements``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Throws an exception if the specified parameter's value is not null
+            <em>and</em> has an element with a null value.
+            </summary>
+            <typeparam name="T">The type of the elements in the sequence.</typeparam>
+            <param name="values">The value of the argument.</param>
+            <param name="parameterName">The name of the parameter to include in any thrown exception.</param>
+            <exception cref="T:System.ArgumentException">Thrown if the tested condition is false.</exception>
+        </member>
+        <member name="M:Xunit.Requires.Range(System.Boolean,System.String,System.String)">
+            <summary>
+            Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if a condition does not evaluate to true.
+            </summary>
+        </member>
+        <member name="M:Xunit.Requires.FailRange(System.String,System.String)">
+            <summary>
+            Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if a condition does not evaluate to true.
+            </summary>
+            <returns>Nothing.  This method always throws.</returns>
+        </member>
+        <member name="M:Xunit.Requires.Argument(System.Boolean,System.String,System.String)">
+            <summary>
+            Throws an ArgumentException if a condition does not evaluate to true.
+            </summary>
+        </member>
+        <member name="M:Xunit.Requires.Argument(System.Boolean,System.String,System.String,System.Object)">
+            <summary>
+            Throws an ArgumentException if a condition does not evaluate to true.
+            </summary>
+        </member>
+        <member name="M:Xunit.Requires.Argument(System.Boolean,System.String,System.String,System.Object,System.Object)">
+            <summary>
+            Throws an ArgumentException if a condition does not evaluate to true.
+            </summary>
+        </member>
+        <member name="M:Xunit.Requires.Argument(System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            Throws an ArgumentException if a condition does not evaluate to true.
+            </summary>
+        </member>
+        <member name="M:Xunit.Requires.That(System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            Validates some expression describing the acceptable condition for an argument evaluates to true.
+            </summary>
+            <param name="condition">The expression that must evaluate to true to avoid an <see cref="T:System.ArgumentException"/>.</param>
+            <param name="parameterName">Name of the parameter.</param>
+            <param name="unformattedMessage">The unformatted message.</param>
+            <param name="args">Formatting arguments.</param>
+        </member>
+        <member name="M:Xunit.Requires.ValidState(System.Boolean,System.String)">
+            <summary>
+            Validates some expression describing the acceptable condition for an argument evaluates to true.
+            </summary>
+            <param name="condition">The expression that must evaluate to true to avoid an <see cref="T:System.InvalidOperationException"/>.</param>
+            <param name="message">The message to include with the exception.</param>
+        </member>
+        <member name="M:Xunit.Requires.Fail(System.String)">
+            <summary>
+            Throws an ArgumentException.
+            </summary>
+            <returns>Nothing.  It always throws.</returns>
+        </member>
+        <member name="M:Xunit.Requires.Fail(System.String,System.Object[])">
+            <summary>
+            Throws an ArgumentException.
+            </summary>
+            <returns>Nothing.  It always throws.</returns>
+        </member>
+        <member name="M:Xunit.Requires.Fail(System.Exception,System.String,System.Object[])">
+            <summary>
+            Throws an ArgumentException.
+            </summary>
+            <returns>Nothing.  This method always throws.  But the signature allows calling code to "throw" this method for C# syntax reasons.</returns>
+        </member>
+        <member name="M:Xunit.Requires.Format(System.String,System.Object[])">
+            <summary>
+            Helper method that formats string arguments.
+            </summary>
+            <returns>The formatted string.</returns>
+        </member>
+        <member name="T:Xunit.Strings">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Xunit.Strings.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Xunit.Strings.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Xunit.Strings.Argument_EmptyArray">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; must contain at least one element..
+            </summary>
+        </member>
+        <member name="P:Xunit.Strings.Argument_EmptyString">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; cannot be an empty string (&quot;&quot;) or start with the null character..
+            </summary>
+        </member>
+        <member name="P:Xunit.Strings.Argument_NullElement">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; cannot contain a null (Nothing in Visual Basic) element..
+            </summary>
+        </member>
+        <member name="P:Xunit.Strings.Argument_Whitespace">
+            <summary>
+              Looks up a localized string similar to The parameter &quot;{0}&quot; cannot consist entirely of white space characters..
+            </summary>
+        </member>
+        <member name="P:Xunit.Strings.InternalExceptionMessage">
+            <summary>
+              Looks up a localized string similar to An internal error occurred. Please contact customer support..
+            </summary>
+        </member>
+        <member name="P:Xunit.Strings.ServiceMissing">
+            <summary>
+              Looks up a localized string similar to Cannot find an instance of the {0} service..
+            </summary>
+        </member>
+        <member name="T:Xunit.TypeInfoExtensions">
+            <summary>
+            Extension methods for the <see cref="T:System.Type"/> class to emulate older reflection APIs.
+            </summary>
+        </member>
+        <member name="M:Xunit.TypeInfoExtensions.GetGenericArguments(System.Reflection.TypeInfo)">
+            <summary>
+            Returns the generic type arguments of specified type.
+            </summary>
+            <param name="type">The type whose generic type arguments should be returned.</param>
+            <returns>An array of types.</returns>
+            <remarks>
+            This silly method allows the same code to compile against the newer
+            as well as older Reflection APIs.
+            </remarks>
+        </member>
+        <member name="T:Xunit.ValuesUtilities">
+            <summary>
+            Utility methods for generating values for test parameters.
+            </summary>
+        </member>
+        <member name="M:Xunit.ValuesUtilities.GetValuesFor(System.Reflection.ParameterInfo)">
+            <summary>
+            Gets a sequence of values that should be tested for the specified parameter.
+            </summary>
+            <param name="parameter">The parameter to get possible values for.</param>
+            <returns>A sequence of values for the parameter.</returns>
+        </member>
+        <member name="M:Xunit.ValuesUtilities.GetValuesFor(System.Type)">
+            <summary>
+            Gets a sequence of values that should be tested for the specified type.
+            </summary>
+            <param name="dataType">The type to get possible values for.</param>
+            <returns>A sequence of values for the <paramref name="dataType"/>.</returns>
+        </member>
+    </members>
+</doc>

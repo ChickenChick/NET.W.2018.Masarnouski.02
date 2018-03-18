@@ -1,0 +1,16 @@
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\Net.W.2018.Masarnouski.02.Tests.dll
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\Net.W.2018.Masarnouski.02.Tests.pdb
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\NET.W.2018.Masarnouski.02.exe
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\NET.W.2018.Masarnouski.02.pdb
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\NET.W.2018.Masarnouski.02.exe.config
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\obj\Debug\Net.W.2018.Masarnouski.02.Tests.csprojResolveAssemblyReference.cache
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\obj\Debug\Net.W.2018.Masarnouski.02.Tests.csproj.CoreCompileInputs.cache
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\obj\Debug\Net.W.2018.Masarnouski.02.Tests.dll
+c:\users\евгений\source\repos\NET.W.2018.Masarnouski.02\Net.W.2018.Masarnouski.02.Tests\obj\Debug\Net.W.2018.Masarnouski.02.Tests.pdb

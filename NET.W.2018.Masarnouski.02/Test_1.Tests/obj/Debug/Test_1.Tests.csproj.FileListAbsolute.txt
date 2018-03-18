@@ -1,0 +1,16 @@
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\obj\Debug\Test_1.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\Test_1.Tests.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\Test_1.Tests.pdb
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\NET.W.2018.Masarnouski.02.exe
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\NET.W.2018.Masarnouski.02.pdb
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\NET.W.2018.Masarnouski.02.exe.config
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\obj\Debug\Test_1.Tests.dll
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\obj\Debug\Test_1.Tests.pdb
+C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\Test_1.Tests\obj\Debug\Test_1.Tests.csprojResolveAssemblyReference.cache
