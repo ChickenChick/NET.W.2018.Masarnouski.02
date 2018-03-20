@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET.W.2018.Masarnouski.02", "NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02.csproj", "{755647DB-B66A-4404-8CEB-C20F136F2DB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_1.Tests", "Test_1.Tests\Task_1.Tests.csproj", "{457C76AB-4A75-4923-9E5E-BDAA190401C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET.W.2018.Masarnouski.02.Tests", "Test_1.Tests\NET.W.2018.Masarnouski.02.Tests.csproj", "{457C76AB-4A75-4923-9E5E-BDAA190401C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_1.NUnitTest", "Task_1.NUnitTest\Task_1.NUnitTest.csproj", "{EA8A5F06-C5F4-40AB-9B01-418175A33485}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET.W.2018.Masaenouski.NUnitTest", "Task_1.NUnitTest\NET.W.2018.Masaenouski.NUnitTest.csproj", "{EA8A5F06-C5F4-40AB-9B01-418175A33485}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0688D57B-2219-4CED-B509-DC62334CC330}"
 EndProject
