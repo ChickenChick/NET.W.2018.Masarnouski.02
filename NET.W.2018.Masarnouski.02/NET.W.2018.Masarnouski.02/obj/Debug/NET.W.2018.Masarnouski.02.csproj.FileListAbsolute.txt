@@ -30,3 +30,12 @@ C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\NET.W.2018.Masarn
 C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\bin\Debug\xunit.abstractions.xml
 C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\bin\Debug\Xunit.Combinatorial.xml
 C:\Users\Евгений\source\repos\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\bin\Debug\xunit.core.xml
+D:\EPAM\HW2\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\obj\Debug\NET.W.2018.Masarnouski.02.csprojResolveAssemblyReference.cache
+D:\EPAM\HW2\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\obj\Debug\NET.W.2018.Masarnouski.02.csproj.CoreCompileInputs.cache
+D:\EPAM\HW2\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\bin\Debug\NET.W.2018.Masarnouski.02.exe.config
+D:\EPAM\HW2\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\bin\Debug\NET.W.2018.Masarnouski.02.exe
+D:\EPAM\HW2\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\bin\Debug\NET.W.2018.Masarnouski.02.pdb
+D:\EPAM\HW2\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\bin\Debug\Combinatorics.dll
+D:\EPAM\HW2\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\bin\Debug\Combinatorics.xml
+D:\EPAM\HW2\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\obj\Debug\NET.W.2018.Masarnouski.02.exe
+D:\EPAM\HW2\NET.W.2018.Masarnouski.02\NET.W.2018.Masarnouski.02\obj\Debug\NET.W.2018.Masarnouski.02.pdb

@@ -2,11 +2,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NET.W._2018.Masarnouski._02;
 
-namespace Tests_For_Task_1
+namespace NET.W._2018.Masarnouski._02.Tests
 {
     [TestClass]
     public class Task_1_Tests
     {
+
         [TestMethod]
         public void InsertNumber_numberSourse8_numberIn15_start3_end8_120returned()
         {

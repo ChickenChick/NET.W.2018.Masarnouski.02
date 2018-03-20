@@ -44,7 +44,7 @@ namespace NET.W._2018.Masarnouski._02
         {
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-            Console.WriteLine($"The Number Is {Task_2_3.FindNextBiggerNumber(inputNumber)}");
+            Console.WriteLine($"The Number Is {FindNextBiggerNumber(inputNumber)}");
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
 
